@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# converts Windows unicode UTF-16 files to git-friendly UTF-8
+
+if test "$#" != 1 ; then
+    echo "Usage: wiconv.exe utf-8 <file>" 1>&2
+    exit 1
+fi
+# convert to utf-8 (from utf-16 or direct copy for ansi)
+"wiconv.exe" utf-8 "$1"
+exit 0
